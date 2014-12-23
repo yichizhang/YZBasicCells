@@ -1,4 +1,4 @@
-BasicCells
-==========
+YZBasicCells
+============
 
-A collection of very basic reusable Table View Cells and Collection View Cells.
+A collection of very basic Table View Cells and Collection View Cells.
