@@ -16,11 +16,52 @@
 
 @implementation YZBasicImageCollectionCell
 
+
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+		
 		[self.contentView addSubview:self.imageView];
+		self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
+		
+		NSLayoutConstraint *topConstraint = [NSLayoutConstraint
+								   constraintWithItem:self.imageView
+								   attribute:NSLayoutAttributeTop
+								   relatedBy:NSLayoutRelationEqual
+								   toItem:self.contentView
+								   attribute:NSLayoutAttributeTop
+								   multiplier:1.0f
+								   constant:0.f];
+		NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint
+									   constraintWithItem:self.imageView
+									   attribute:NSLayoutAttributeLeading
+									   relatedBy:NSLayoutRelationEqual
+									   toItem:self.contentView
+									   attribute:NSLayoutAttributeLeading
+									   multiplier:1.0f
+									   constant:0.f];
+		NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint
+								   constraintWithItem:self.imageView
+								   attribute:NSLayoutAttributeBottom
+								   relatedBy:NSLayoutRelationEqual
+								   toItem:self.contentView
+								   attribute:NSLayoutAttributeBottom
+								   multiplier:1.0f
+								   constant:0.f];
+		NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint
+									   constraintWithItem:self.imageView
+									   attribute:NSLayoutAttributeTrailing
+									   relatedBy:NSLayoutRelationEqual
+									   toItem:self.contentView
+									   attribute:NSLayoutAttributeTrailing
+									   multiplier:1.0f
+									   constant:0.f];
+		[self.contentView addConstraint:topConstraint];
+		[self.contentView addConstraint:leadingConstraint];
+		[self.contentView addConstraint:bottomConstraint];
+		[self.contentView addConstraint:trailingConstraint];
     }
     return self;
 }
@@ -32,11 +73,6 @@
 		_imageView.clipsToBounds = YES;
 	}
 	return _imageView;
-}
-
-- (void)layoutSubviews{
-	[super layoutSubviews];
-	self.imageView.frame = self.contentView.bounds;
 }
 
 - (void)prepareForReuse{

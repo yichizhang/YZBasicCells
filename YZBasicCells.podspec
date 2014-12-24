@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "YZBasicCells"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A collection of very basic Table View Cells and Collection View Cells."
   s.homepage     = "https://github.com/yichizhang/" + s.name
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
