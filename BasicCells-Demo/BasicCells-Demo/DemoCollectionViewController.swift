@@ -22,7 +22,16 @@ Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 import UIKit
 
-let reuseIdentifier = "Cell"
+enum DemoCollectionViewControllerCellId : String {
+	case BasicImageCellNoAutoLayoutId = "BasicImageCellNoAutoLayoutId"
+	case BasicImageCellId = "BasicImageCellId"
+}
+
+enum DemoCollectionViewControllerSection : Int {
+	case BasicImageCellNoAutoLayout = 0
+	case BasicImageCell
+	case NumberOfSections
+}
 
 class DemoCollectionViewController: UICollectionViewController {
 
@@ -33,8 +42,16 @@ class DemoCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(YZBasicImageCollectionCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        self.collectionView!.registerClass(
+			YZBasicImageCollectionCell.self,
+			forCellWithReuseIdentifier:DemoCollectionViewControllerCellId.BasicImageCellId.rawValue
+		)
+		
+		self.collectionView!.registerClass(
+			YZBasicImageCollectionCellNoAutoLayout.self,
+			forCellWithReuseIdentifier:DemoCollectionViewControllerCellId.BasicImageCellNoAutoLayoutId.rawValue
+		)
+		
         // Do any additional setup after loading the view.
     }
 
@@ -57,7 +74,7 @@ class DemoCollectionViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
-        return 1
+        return DemoCollectionViewControllerSection.NumberOfSections.rawValue
     }
 
 
@@ -67,13 +84,35 @@ class DemoCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as YZBasicImageCollectionCell
-    
-        // Configure the cell
 		
-		cell.imageView.image = UIImage(named: "demo-\(indexPath.row+1).jpg")
+		switch indexPath.section {
+		case DemoCollectionViewControllerSection.BasicImageCell.rawValue:
+			
+			let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
+				DemoCollectionViewControllerCellId.BasicImageCellId.rawValue,
+				forIndexPath: indexPath
+				) as YZBasicImageCollectionCell
+			
+			cell.imageView.image = UIImage(named: "demo-\(indexPath.row+1).jpg")
+			
+			return cell
+			
+		case DemoCollectionViewControllerSection.BasicImageCellNoAutoLayout.rawValue:
+			fallthrough
+			
+		default:
+			
+			let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
+				DemoCollectionViewControllerCellId.BasicImageCellNoAutoLayoutId.rawValue,
+				forIndexPath: indexPath
+				) as YZBasicImageCollectionCellNoAutoLayout
+			
+			cell.imageView.image = UIImage(named: "demo-\(indexPath.row+1).jpg")
+			
+			return cell
+		}
 		
-        return cell
+		
     }
 
     // MARK: UICollectionViewDelegate
