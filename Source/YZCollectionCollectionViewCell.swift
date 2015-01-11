@@ -13,6 +13,7 @@
  */
 import UIKit
 
+/// This class is meant to be an 'abstract class'
 class YZCollectionCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	
 	var registerClasses:((UICollectionView) -> Void)?
@@ -28,8 +29,6 @@ class YZCollectionCollectionViewCell: UICollectionViewCell, UICollectionViewDele
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		
-		self.contentView.backgroundColor = UIColor.artDetailMoreFromThisArtistBackgroundColor()
-		self.cellCollectionView().backgroundColor = UIColor.artDetailMoreFromThisArtistBackgroundColor()
 	}
 	
 	func cellCollectionView() -> UICollectionView{
