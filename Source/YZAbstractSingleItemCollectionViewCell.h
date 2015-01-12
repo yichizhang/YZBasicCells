@@ -12,32 +12,16 @@
  
  */
 
-#import "YZBasicImageCollectionCell.h"
+@import UIKit;
 
-@implementation YZBasicImageCollectionCell
+@interface YZAbstractSingleItemCollectionViewCell : UICollectionViewCell
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-		
-		[self inititializeConstraintsForSingleItemView:self.imageView];
-		
-    }
-    return self;
-}
+@property (strong, nonatomic) NSLayoutConstraint *topConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *leadingConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *bottomConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *trailingConstraint;
 
-- (UIImageView *)imageView{
-	if (!_imageView) {
-		_imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-		_imageView.contentMode = UIViewContentModeScaleAspectFill;
-		_imageView.clipsToBounds = YES;
-	}
-	return _imageView;
-}
-
-- (void)prepareForReuse{
-	self.imageView.image = nil;
-}
+- (void)inititializeConstraintsForSingleItemView:(UIView*)singleItemView;
+- (void)setUpWithPadding:(UIEdgeInsets)insets;
 
 @end

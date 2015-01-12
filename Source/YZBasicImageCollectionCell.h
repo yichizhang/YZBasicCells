@@ -12,9 +12,9 @@
  
  */
 
-#import <UIKit/UIKit.h>
+#import "YZAbstractSingleItemCollectionViewCell.h"
 
-@interface YZBasicImageCollectionCell : UICollectionViewCell
+@interface YZBasicImageCollectionCell : YZAbstractSingleItemCollectionViewCell
 
 @property (strong, nonatomic) UIImageView *imageView;
 

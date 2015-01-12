@@ -14,6 +14,7 @@
 import UIKit
 
 /// This class is meant to be an 'abstract class'
+
 class YZCollectionCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	
 	var registerClasses:((UICollectionView) -> Void)?
