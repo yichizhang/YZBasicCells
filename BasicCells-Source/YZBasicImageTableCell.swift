@@ -18,14 +18,21 @@ class YZBasicImageTableCell: YZAbstractSingleItemTableViewCell {
 	
 	var basicImageView:UIImageView!
 	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		
+	func commonInit(){
 		self.basicImageView = UIImageView()
 		self.basicImageView.contentMode = UIViewContentMode.ScaleAspectFill
 		self.basicImageView.clipsToBounds = true
-		
 		self.inititializeConstraintsForSingleItemView(self.basicImageView)
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.commonInit()
+	}
+	
+	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		self.commonInit()
 	}
 	
 	required init(coder aDecoder: NSCoder) {

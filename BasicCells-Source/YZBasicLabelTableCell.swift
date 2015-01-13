@@ -18,10 +18,19 @@ class YZBasicLabelTabelCell: YZAbstractSingleItemTableViewCell {
 	
 	var basicLabel:UILabel = UILabel()
 	
+	func commonInit(){
+		self.basicLabel.numberOfLines = 0
+		self.inititializeConstraintsForSingleItemView(self.basicLabel)
+	}
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		
-		self.inititializeConstraintsForSingleItemView(self.basicLabel)
+		self.commonInit()
+	}
+	
+	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		self.commonInit()
 	}
 
 	required init(coder aDecoder: NSCoder) {
