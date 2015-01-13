@@ -39,18 +39,18 @@
 							  multiplier:1.0f
 							  constant:0.f];
 	self.bottomConstraint = [NSLayoutConstraint
-							 constraintWithItem:singleItemView
+							 constraintWithItem:self.contentView
 							 attribute:NSLayoutAttributeBottom
 							 relatedBy:NSLayoutRelationEqual
-							 toItem:self.contentView
+							 toItem:singleItemView
 							 attribute:NSLayoutAttributeBottom
 							 multiplier:1.0f
 							 constant:0.f];
 	self.trailingConstraint = [NSLayoutConstraint
-							   constraintWithItem:singleItemView
+							   constraintWithItem:self.contentView
 							   attribute:NSLayoutAttributeTrailing
 							   relatedBy:NSLayoutRelationEqual
-							   toItem:self.contentView
+							   toItem:singleItemView
 							   attribute:NSLayoutAttributeTrailing
 							   multiplier:1.0f
 							   constant:0.f];
