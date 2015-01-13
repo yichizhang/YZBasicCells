@@ -20,8 +20,14 @@
 		12CB777B1A49F57200B50F95 /* demo-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CB77751A49F57200B50F95 /* demo-4.jpg */; };
 		12CB777C1A49F57200B50F95 /* demo-5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CB77761A49F57200B50F95 /* demo-5.jpg */; };
 		12CB777D1A49F57200B50F95 /* demo-6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12CB77771A49F57200B50F95 /* demo-6.jpg */; };
-		12CC44021A4B0E24000B1B3C /* YZBasicImageCollectionCellNoAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CC44011A4B0E23000B1B3C /* YZBasicImageCollectionCellNoAutoLayout.m */; };
-		12CC44051A4B0F6B000B1B3C /* YZBasicImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CC44041A4B0F6B000B1B3C /* YZBasicImageCollectionCell.m */; };
+		12DE0C521A655AEC00F7AB4E /* YZCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE0C461A655AEC00F7AB4E /* YZCollectionCollectionViewCell.swift */; };
+		12DE0C531A655AEC00F7AB4E /* YZBasicImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DE0C471A655AEC00F7AB4E /* YZBasicImageCollectionCell.m */; };
+		12DE0C541A655AEC00F7AB4E /* YZAbstractSingleItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DE0C4A1A655AEC00F7AB4E /* YZAbstractSingleItemCollectionViewCell.m */; };
+		12DE0C551A655AEC00F7AB4E /* YZInfiniteCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE0C4B1A655AEC00F7AB4E /* YZInfiniteCollectionCollectionViewCell.swift */; };
+		12DE0C561A655AEC00F7AB4E /* YZBasicLabelTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE0C4D1A655AEC00F7AB4E /* YZBasicLabelTableCell.swift */; };
+		12DE0C571A655AEC00F7AB4E /* YZAbstractSingleItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DE0C4E1A655AEC00F7AB4E /* YZAbstractSingleItemTableViewCell.m */; };
+		12DE0C581A655AEC00F7AB4E /* YZBasicLabelCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE0C4F1A655AEC00F7AB4E /* YZBasicLabelCollectionCell.swift */; };
+		12DE0C591A655AEC00F7AB4E /* YZBasicImageTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE0C501A655AEC00F7AB4E /* YZBasicImageTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +59,18 @@
 		12CB77751A49F57200B50F95 /* demo-4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "demo-4.jpg"; sourceTree = "<group>"; };
 		12CB77761A49F57200B50F95 /* demo-5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "demo-5.jpg"; sourceTree = "<group>"; };
 		12CB77771A49F57200B50F95 /* demo-6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "demo-6.jpg"; sourceTree = "<group>"; };
-		12CC44001A4B0E23000B1B3C /* YZBasicImageCollectionCellNoAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZBasicImageCollectionCellNoAutoLayout.h; sourceTree = "<group>"; };
-		12CC44011A4B0E23000B1B3C /* YZBasicImageCollectionCellNoAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZBasicImageCollectionCellNoAutoLayout.m; sourceTree = "<group>"; };
-		12CC44031A4B0F6B000B1B3C /* YZBasicImageCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZBasicImageCollectionCell.h; sourceTree = "<group>"; };
-		12CC44041A4B0F6B000B1B3C /* YZBasicImageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZBasicImageCollectionCell.m; sourceTree = "<group>"; };
+		12DE0C461A655AEC00F7AB4E /* YZCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		12DE0C471A655AEC00F7AB4E /* YZBasicImageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZBasicImageCollectionCell.m; sourceTree = "<group>"; };
+		12DE0C481A655AEC00F7AB4E /* YZBasicImageCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZBasicImageCollectionCell.h; sourceTree = "<group>"; };
+		12DE0C491A655AEC00F7AB4E /* YZAbstractSingleItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZAbstractSingleItemCollectionViewCell.h; sourceTree = "<group>"; };
+		12DE0C4A1A655AEC00F7AB4E /* YZAbstractSingleItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZAbstractSingleItemCollectionViewCell.m; sourceTree = "<group>"; };
+		12DE0C4B1A655AEC00F7AB4E /* YZInfiniteCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZInfiniteCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		12DE0C4C1A655AEC00F7AB4E /* YZAbstractSingleItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZAbstractSingleItemTableViewCell.h; sourceTree = "<group>"; };
+		12DE0C4D1A655AEC00F7AB4E /* YZBasicLabelTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZBasicLabelTableCell.swift; sourceTree = "<group>"; };
+		12DE0C4E1A655AEC00F7AB4E /* YZAbstractSingleItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZAbstractSingleItemTableViewCell.m; sourceTree = "<group>"; };
+		12DE0C4F1A655AEC00F7AB4E /* YZBasicLabelCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZBasicLabelCollectionCell.swift; sourceTree = "<group>"; };
+		12DE0C501A655AEC00F7AB4E /* YZBasicImageTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZBasicImageTableCell.swift; sourceTree = "<group>"; };
+		12DE0C511A655AEC00F7AB4E /* YZBasicCells-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YZBasicCells-Bridging-Header.h"; sourceTree = "<group>"; };
 		61AB6BD204FA82E81380A331 /* libPods-BasicCells-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BasicCells-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		661DBAA530B2B03ACF2C1C9E /* Pods-BasicCells-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicCells-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BasicCells-Demo/Pods-BasicCells-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		E285ADF8B19CF51397CFF3F5 /* Pods-BasicCells-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BasicCells-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BasicCells-Demo/Pods-BasicCells-Demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,7 +97,6 @@
 		12CB77291A49D36600B50F95 = {
 			isa = PBXGroup;
 			children = (
-				12CC43FF1A4B0E23000B1B3C /* Source */,
 				12CB77341A49D36600B50F95 /* BasicCells-Demo */,
 				12CB774A1A49D36600B50F95 /* BasicCells-DemoTests */,
 				12CB77331A49D36600B50F95 /* Products */,
@@ -104,6 +117,7 @@
 		12CB77341A49D36600B50F95 /* BasicCells-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				12DE0C451A655AEC00F7AB4E /* BasicCells-Source */,
 				12CB77711A49F57200B50F95 /* Assets */,
 				12CB77371A49D36600B50F95 /* AppDelegate.swift */,
 				12CB77391A49D36600B50F95 /* ViewController.swift */,
@@ -155,16 +169,24 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		12CC43FF1A4B0E23000B1B3C /* Source */ = {
+		12DE0C451A655AEC00F7AB4E /* BasicCells-Source */ = {
 			isa = PBXGroup;
 			children = (
-				12CC44001A4B0E23000B1B3C /* YZBasicImageCollectionCellNoAutoLayout.h */,
-				12CC44011A4B0E23000B1B3C /* YZBasicImageCollectionCellNoAutoLayout.m */,
-				12CC44031A4B0F6B000B1B3C /* YZBasicImageCollectionCell.h */,
-				12CC44041A4B0F6B000B1B3C /* YZBasicImageCollectionCell.m */,
+				12DE0C461A655AEC00F7AB4E /* YZCollectionCollectionViewCell.swift */,
+				12DE0C471A655AEC00F7AB4E /* YZBasicImageCollectionCell.m */,
+				12DE0C481A655AEC00F7AB4E /* YZBasicImageCollectionCell.h */,
+				12DE0C491A655AEC00F7AB4E /* YZAbstractSingleItemCollectionViewCell.h */,
+				12DE0C4A1A655AEC00F7AB4E /* YZAbstractSingleItemCollectionViewCell.m */,
+				12DE0C4B1A655AEC00F7AB4E /* YZInfiniteCollectionCollectionViewCell.swift */,
+				12DE0C4C1A655AEC00F7AB4E /* YZAbstractSingleItemTableViewCell.h */,
+				12DE0C4D1A655AEC00F7AB4E /* YZBasicLabelTableCell.swift */,
+				12DE0C4E1A655AEC00F7AB4E /* YZAbstractSingleItemTableViewCell.m */,
+				12DE0C4F1A655AEC00F7AB4E /* YZBasicLabelCollectionCell.swift */,
+				12DE0C501A655AEC00F7AB4E /* YZBasicImageTableCell.swift */,
+				12DE0C511A655AEC00F7AB4E /* YZBasicCells-Bridging-Header.h */,
 			);
-			name = Source;
-			path = ../Source;
+			name = "BasicCells-Source";
+			path = "../../BasicCells-Source";
 			sourceTree = "<group>";
 		};
 		15FD0DEB5F14E3874D6AACC5 /* Pods */ = {
@@ -291,10 +313,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				12CB773A1A49D36600B50F95 /* ViewController.swift in Sources */,
+				12DE0C521A655AEC00F7AB4E /* YZCollectionCollectionViewCell.swift in Sources */,
+				12DE0C571A655AEC00F7AB4E /* YZAbstractSingleItemTableViewCell.m in Sources */,
+				12DE0C541A655AEC00F7AB4E /* YZAbstractSingleItemCollectionViewCell.m in Sources */,
+				12DE0C561A655AEC00F7AB4E /* YZBasicLabelTableCell.swift in Sources */,
 				12CB77381A49D36600B50F95 /* AppDelegate.swift in Sources */,
+				12DE0C581A655AEC00F7AB4E /* YZBasicLabelCollectionCell.swift in Sources */,
 				12CB77601A49F46800B50F95 /* DemoCollectionViewController.swift in Sources */,
-				12CC44021A4B0E24000B1B3C /* YZBasicImageCollectionCellNoAutoLayout.m in Sources */,
-				12CC44051A4B0F6B000B1B3C /* YZBasicImageCollectionCell.m in Sources */,
+				12DE0C591A655AEC00F7AB4E /* YZBasicImageTableCell.swift in Sources */,
+				12DE0C551A655AEC00F7AB4E /* YZInfiniteCollectionCollectionViewCell.swift in Sources */,
+				12DE0C531A655AEC00F7AB4E /* YZBasicImageCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,8 +28,7 @@ enum DemoCollectionViewControllerCellId : String {
 }
 
 enum DemoCollectionViewControllerSection : Int {
-	case BasicImageCellNoAutoLayout = 0
-	case BasicImageCell
+	case BasicImageCell = 0
 	case NumberOfSections
 }
 
@@ -45,11 +44,6 @@ class DemoCollectionViewController: UICollectionViewController {
         self.collectionView!.registerClass(
 			YZBasicImageCollectionCell.self,
 			forCellWithReuseIdentifier:DemoCollectionViewControllerCellId.BasicImageCellId.rawValue
-		)
-		
-		self.collectionView!.registerClass(
-			YZBasicImageCollectionCellNoAutoLayout.self,
-			forCellWithReuseIdentifier:DemoCollectionViewControllerCellId.BasicImageCellNoAutoLayoutId.rawValue
 		)
 		
         // Do any additional setup after loading the view.
@@ -86,8 +80,11 @@ class DemoCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		
 		switch indexPath.section {
-		case DemoCollectionViewControllerSection.BasicImageCell.rawValue:
 			
+		case DemoCollectionViewControllerSection.BasicImageCell.rawValue:
+			fallthrough
+			
+		default:			
 			let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
 				DemoCollectionViewControllerCellId.BasicImageCellId.rawValue,
 				forIndexPath: indexPath
@@ -97,19 +94,6 @@ class DemoCollectionViewController: UICollectionViewController {
 			
 			return cell
 			
-		case DemoCollectionViewControllerSection.BasicImageCellNoAutoLayout.rawValue:
-			fallthrough
-			
-		default:
-			
-			let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-				DemoCollectionViewControllerCellId.BasicImageCellNoAutoLayoutId.rawValue,
-				forIndexPath: indexPath
-				) as YZBasicImageCollectionCellNoAutoLayout
-			
-			cell.imageView.image = UIImage(named: "demo-\(indexPath.row+1).jpg")
-			
-			return cell
 		}
 		
 		
