@@ -22,6 +22,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
+		if window == nil {
+			window = UIWindow(frame: UIScreen.mainScreen().bounds)
+		}
+		
+		let tabVC = UITabBarController()
+		
+		let vc1 = DemoCollectionViewController()
+		vc1.tabBarItem = UITabBarItem(title: "Cells", image: DemoStyleKit.imageOf(string: "A"), tag: 0)
+		
+		let vc2 = UIViewController()//DemoCollectionViewController()
+		vc2.tabBarItem = UITabBarItem(title: "Demo", image: DemoStyleKit.imageOf(string: "B"), tag: 0)
+		
+		tabVC.viewControllers = [
+			vc1,
+			vc2
+		]
+		
+		window?.rootViewController = tabVC
+		window?.makeKeyAndVisible()
+		
 		return true
 	}
 

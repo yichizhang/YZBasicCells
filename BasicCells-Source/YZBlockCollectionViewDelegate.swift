@@ -24,7 +24,7 @@ protocol YZBlockCollectionViewDelegateProtocol {
 		cellForItemAtIndexPathBlock: ((collectionView:UICollectionView, indexPath:NSIndexPath) -> UICollectionViewCell)!,
 		sizeForItemAtIndexPathBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, indexPath:NSIndexPath) -> CGSize)?,
 		didSelectItemAtIndexPathBlock: ((collectionView:UICollectionView, indexPath:NSIndexPath) -> Void)?,
-		insetForSectionAtIndexBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, Int) -> UIEdgeInsets)?,
+		insetForSectionAtIndexBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, section:Int) -> UIEdgeInsets)?,
 		minimumInteritemSpacingForSectionAtIndexBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, section:Int) -> CGFloat)?,
 		minimumLineSpacingForSectionAtIndexBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, section:Int) -> CGFloat)?
 	);
@@ -52,11 +52,11 @@ class YZBlockCollectionViewDelegate : NSObject, UICollectionViewDelegate, UIColl
 		cellForItemAtIndexPathBlock: ((collectionView:UICollectionView, indexPath:NSIndexPath) -> UICollectionViewCell)!,
 		sizeForItemAtIndexPathBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, indexPath:NSIndexPath) -> CGSize)?,
 		didSelectItemAtIndexPathBlock: ((collectionView:UICollectionView, indexPath:NSIndexPath) -> Void)?,
-		insetForSectionAtIndexBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, Int) -> UIEdgeInsets)?,
+		insetForSectionAtIndexBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, section:Int) -> UIEdgeInsets)?,
 		minimumInteritemSpacingForSectionAtIndexBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, section:Int) -> CGFloat)?,
 		minimumLineSpacingForSectionAtIndexBlock: ((collectionView:UICollectionView, collectionViewLayout:UICollectionViewLayout, section:Int) -> CGFloat)?
 		) {
-	
+			
 			self.collectionView = collectionView
 			self.registerClassesBlock = registerClassesBlock
 			self.numberOfSectionsBlock = numberOfSectionsBlock
@@ -67,6 +67,8 @@ class YZBlockCollectionViewDelegate : NSObject, UICollectionViewDelegate, UIColl
 			self.insetForSectionAtIndexBlock = insetForSectionAtIndexBlock
 			self.minimumInteritemSpacingForSectionAtIndexBlock = minimumInteritemSpacingForSectionAtIndexBlock
 			self.minimumLineSpacingForSectionAtIndexBlock = minimumLineSpacingForSectionAtIndexBlock
+			
+			self.reloadData()
 	}
 	
 	func reloadData(){
