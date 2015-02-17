@@ -14,24 +14,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import UIKit
 
-class YZBasicImageTableCell: YZAbstractSingleItemTableViewCell {
+// MARK: Basic IMAGE Collection Cell
+class YZBasicImageCollectionCell: YZAbstractSingleItemCollectionViewCell {
 	
-	var basicImageView:UIImageView!
+	lazy var imageView:UIImageView = {
+		let imageView = UIImageView()
+		imageView.contentMode = UIViewContentMode.ScaleAspectFill
+		imageView.clipsToBounds = true
+		return imageView
+	}()
 	
 	func commonInit(){
-		self.basicImageView = UIImageView()
-		self.basicImageView.contentMode = UIViewContentMode.ScaleAspectFill
-		self.basicImageView.clipsToBounds = true
-		self.inititializeConstraintsForSingleItemView(self.basicImageView)
+		self.inititializeConstraintsForSingleItemView(self.imageView)
 	}
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		self.commonInit()
-	}
-	
-	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		self.commonInit()
 	}
 	
@@ -40,7 +38,35 @@ class YZBasicImageTableCell: YZAbstractSingleItemTableViewCell {
 	}
 	
 	override func prepareForReuse() {
-		self.basicImageView.image = nil
+		self.imageView.image = nil
 	}
 	
+}
+
+// MARK: Basic LABEL Collection Cell
+class YZBasicLabelCollectionCell: YZAbstractSingleItemCollectionViewCell {
+
+	var basicLabel:UILabel = {
+		let label = UILabel()
+		label.numberOfLines = 0
+		return label
+	}()
+	
+	func commonInit(){
+		self.inititializeConstraintsForSingleItemView(self.basicLabel)
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.commonInit()
+	}
+	
+	required init(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	override func prepareForReuse() {
+		self.basicLabel.text = ""
+	}
+
 }

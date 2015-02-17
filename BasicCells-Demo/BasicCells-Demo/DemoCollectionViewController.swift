@@ -35,6 +35,7 @@ enum DemoCollectionViewControllerSection : Int {
 class DemoCollectionViewController: UIViewController {
 
 	var collectionView:UICollectionView!
+	var mode:Int = 0
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,24 +48,9 @@ class DemoCollectionViewController: UIViewController {
 		layout.itemSize = CGSizeMake(view.bounds.width * 0.45, view.bounds.width * 0.45)
 		
 		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
-
-/*
-		collectionView.delegate = self
-		collectionView.dataSource = self
-        // Register cell classes
-        collectionView.registerClass(
-			YZBasicImageCollectionCell.self,
-			forCellWithReuseIdentifier:DemoCollectionViewControllerCellId.BasicImageCellId.rawValue
-		)
-		
-*/
 		
 		collectionView.backgroundColor = UIColor.whiteColor()
-//		collectionView.registerClass(
-//			YZBasicImageCollectionCell.self,
-//			forCellWithReuseIdentifier:DemoCollectionViewControllerCellId.BasicImageCellId.rawValue
-//		)
-		
+
 		collectionView.yz_blockCollectionViewDelegate = YZBlockCollectionViewDelegate()
 		collectionView.delegate = collectionView.yz_blockCollectionViewDelegate
 		collectionView.dataSource = collectionView.yz_blockCollectionViewDelegate
@@ -94,7 +80,11 @@ class DemoCollectionViewController: UIViewController {
 					forIndexPath: indexPath
 					) as YZBasicImageCollectionCell
 				
-				cell.imageView.image = UIImage(named: "demo-\(indexPath.row+1).jpg")
+				var k = indexPath.row+1
+				if self.mode == 1 {
+					k = 1
+				}
+				cell.imageView.image = UIImage(named: "demo-\(k).jpg")
 				
 				return cell
 				

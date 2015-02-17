@@ -17,20 +17,14 @@ import UIKit
 public class DemoStyleKit : NSObject {
 	
 	class var mainFont:UIFont {
-		return UIFont(name: "HelveticaNeue-Bold", size: 25)!
+		return UIFont(name: "HelveticaNeue-Light", size: 25)!
 	}
 	
     //// Cache
     
     private struct Cache {
 		static var imageDict : [String:UIImage] = Dictionary()
-        static var oneTargets: [AnyObject]?
-//        static var imageOfTwo: UIImage?
-//        static var twoTargets: [AnyObject]?
-//        static var imageOfThree: UIImage?
-//        static var threeTargets: [AnyObject]?
-//        static var imageOfFour: UIImage?
-//        static var fourTargets: [AnyObject]?
+//        static var oneTargets: [AnyObject]?
     }
 	
     //// Drawing Methods

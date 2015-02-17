@@ -14,7 +14,40 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import UIKit
 
-class YZBasicLabelTabelCell: YZAbstractSingleItemTableViewCell {
+// MARK: Basic IMAGE Table Cell
+class YZBasicImageTableCell: YZAbstractSingleItemTableViewCell {
+	
+	var basicImageView:UIImageView!
+	
+	func commonInit(){
+		self.basicImageView = UIImageView()
+		self.basicImageView.contentMode = UIViewContentMode.ScaleAspectFill
+		self.basicImageView.clipsToBounds = true
+		self.inititializeConstraintsForSingleItemView(self.basicImageView)
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.commonInit()
+	}
+	
+	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		self.commonInit()
+	}
+	
+	required init(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	override func prepareForReuse() {
+		self.basicImageView.image = nil
+	}
+	
+}
+
+// MARK: Basic LBAEL Table Cell
+class YZBasicLabelTableCell: YZAbstractSingleItemTableViewCell {
 	
 	var basicLabel:UILabel = UILabel()
 	
