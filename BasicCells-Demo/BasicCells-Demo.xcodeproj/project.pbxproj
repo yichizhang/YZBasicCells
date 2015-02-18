@@ -12,10 +12,8 @@
 		121B9D821A91F248008C523D /* YZBasicCollectionCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B9D791A91F248008C523D /* YZBasicCollectionCells.swift */; };
 		121B9D831A91F248008C523D /* YZBasicTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B9D7A1A91F248008C523D /* YZBasicTableCells.swift */; };
 		121B9D841A91F248008C523D /* YZBlockCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B9D7B1A91F248008C523D /* YZBlockCollectionViewDelegate.swift */; };
-		121B9D851A91F248008C523D /* YZCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B9D7C1A91F248008C523D /* YZCollectionCollectionViewCell.swift */; };
-		121B9D861A91F248008C523D /* YZInfiniteCollectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B9D7D1A91F248008C523D /* YZInfiniteCollectionCollectionViewCell.swift */; };
 		121B9D881A91FAC8008C523D /* DemoStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121B9D871A91FAC8008C523D /* DemoStyleKit.swift */; };
-		128A49B91A92A5A20091561D /* DemoCollectionCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A49B81A92A5A20091561D /* DemoCollectionCellViewController.swift */; };
+		128A49B91A92A5A20091561D /* CrazyHorizontalCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A49B81A92A5A20091561D /* CrazyHorizontalCellViewController.swift */; };
 		12CB77381A49D36600B50F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CB77371A49D36600B50F95 /* AppDelegate.swift */; };
 		12CB773A1A49D36600B50F95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CB77391A49D36600B50F95 /* ViewController.swift */; };
 		12CB773F1A49D36600B50F95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12CB773E1A49D36600B50F95 /* Images.xcassets */; };
@@ -49,10 +47,8 @@
 		121B9D791A91F248008C523D /* YZBasicCollectionCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZBasicCollectionCells.swift; sourceTree = "<group>"; };
 		121B9D7A1A91F248008C523D /* YZBasicTableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZBasicTableCells.swift; sourceTree = "<group>"; };
 		121B9D7B1A91F248008C523D /* YZBlockCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZBlockCollectionViewDelegate.swift; sourceTree = "<group>"; };
-		121B9D7C1A91F248008C523D /* YZCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
-		121B9D7D1A91F248008C523D /* YZInfiniteCollectionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZInfiniteCollectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		121B9D871A91FAC8008C523D /* DemoStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoStyleKit.swift; sourceTree = "<group>"; };
-		128A49B81A92A5A20091561D /* DemoCollectionCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCollectionCellViewController.swift; sourceTree = "<group>"; };
+		128A49B81A92A5A20091561D /* CrazyHorizontalCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrazyHorizontalCellViewController.swift; sourceTree = "<group>"; };
 		12CB77321A49D36600B50F95 /* BasicCells-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BasicCells-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CB77361A49D36600B50F95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12CB77371A49D36600B50F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,8 +100,6 @@
 				121B9D791A91F248008C523D /* YZBasicCollectionCells.swift */,
 				121B9D7A1A91F248008C523D /* YZBasicTableCells.swift */,
 				121B9D7B1A91F248008C523D /* YZBlockCollectionViewDelegate.swift */,
-				121B9D7C1A91F248008C523D /* YZCollectionCollectionViewCell.swift */,
-				121B9D7D1A91F248008C523D /* YZInfiniteCollectionCollectionViewCell.swift */,
 			);
 			name = "BasicCells-Source";
 			path = "../../BasicCells-Source";
@@ -139,7 +133,7 @@
 				12CB77371A49D36600B50F95 /* AppDelegate.swift */,
 				12CB77391A49D36600B50F95 /* ViewController.swift */,
 				12CB775F1A49F46800B50F95 /* DemoCollectionViewController.swift */,
-				128A49B81A92A5A20091561D /* DemoCollectionCellViewController.swift */,
+				128A49B81A92A5A20091561D /* CrazyHorizontalCellViewController.swift */,
 				121B9D871A91FAC8008C523D /* DemoStyleKit.swift */,
 				12CB773E1A49D36600B50F95 /* Images.xcassets */,
 				12CB77401A49D36600B50F95 /* LaunchScreen.xib */,
@@ -312,15 +306,13 @@
 				121B9D821A91F248008C523D /* YZBasicCollectionCells.swift in Sources */,
 				12CB773A1A49D36600B50F95 /* ViewController.swift in Sources */,
 				121B9D841A91F248008C523D /* YZBlockCollectionViewDelegate.swift in Sources */,
-				121B9D851A91F248008C523D /* YZCollectionCollectionViewCell.swift in Sources */,
 				121B9D831A91F248008C523D /* YZBasicTableCells.swift in Sources */,
 				12CB77381A49D36600B50F95 /* AppDelegate.swift in Sources */,
 				121B9D881A91FAC8008C523D /* DemoStyleKit.swift in Sources */,
 				121B9D7F1A91F248008C523D /* YZAbstractSingleItemTableViewCell.m in Sources */,
 				121B9D7E1A91F248008C523D /* YZAbstractSingleItemCollectionViewCell.m in Sources */,
 				12CB77601A49F46800B50F95 /* DemoCollectionViewController.swift in Sources */,
-				121B9D861A91F248008C523D /* YZInfiniteCollectionCollectionViewCell.swift in Sources */,
-				128A49B91A92A5A20091561D /* DemoCollectionCellViewController.swift in Sources */,
+				128A49B91A92A5A20091561D /* CrazyHorizontalCellViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

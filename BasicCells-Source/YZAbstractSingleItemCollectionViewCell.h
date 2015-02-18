@@ -21,7 +21,7 @@
 @property (strong, nonatomic) NSLayoutConstraint *bottomConstraint;
 @property (strong, nonatomic) NSLayoutConstraint *trailingConstraint;
 
-- (void)inititializeConstraintsForSingleItemView:(UIView*)singleItemView;
+- (void)addToSubviewAndSetupConstraintsForSingleItemView:(UIView*)singleItemView;
 - (void)setUpWithPadding:(UIEdgeInsets)insets;
 
 @end

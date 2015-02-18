@@ -29,14 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let tabVC = UITabBarController()
 		
 		let vc1 = DemoCollectionViewController()
-		vc1.tabBarItem = UITabBarItem(title: "Cells", image: DemoStyleKit.imageOf(string: "A"), tag: 0)
+		vc1.tabBarItem = UITabBarItem(title: "Demo A", image: DemoStyleKit.imageOf(string: "A"), tag: 0)
 		
 		let vc2 = DemoCollectionViewController()
 		vc2.mode = 1
-		vc2.tabBarItem = UITabBarItem(title: "Demo", image: DemoStyleKit.imageOf(string: "B"), tag: 0)
+		vc2.tabBarItem = UITabBarItem(title: "Demo B", image: DemoStyleKit.imageOf(string: "B"), tag: 0)
 		
-		let vc3 = DemoCollectionCellViewController()
-		vc3.tabBarItem = UITabBarItem(title: "Demo 3", image: DemoStyleKit.imageOf(string: "C"), tag: 0)
+		let vc3 = CrazyHorizontalCellViewController()
+		vc3.tabBarItem = UITabBarItem(title: "Demo C", image: DemoStyleKit.imageOf(string: "C"), tag: 0)
 		
 		tabVC.viewControllers = [
 			vc1,

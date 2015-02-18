@@ -23,7 +23,7 @@ class YZBasicImageTableCell: YZAbstractSingleItemTableViewCell {
 		self.basicImageView = UIImageView()
 		self.basicImageView.contentMode = UIViewContentMode.ScaleAspectFill
 		self.basicImageView.clipsToBounds = true
-		self.inititializeConstraintsForSingleItemView(self.basicImageView)
+		self.addToSubviewAndSetupConstraintsForSingleItemView(self.basicImageView)
 	}
 	
 	override init(frame: CGRect) {
@@ -53,7 +53,7 @@ class YZBasicLabelTableCell: YZAbstractSingleItemTableViewCell {
 	
 	func commonInit(){
 		self.basicLabel.numberOfLines = 0
-		self.inititializeConstraintsForSingleItemView(self.basicLabel)
+		self.addToSubviewAndSetupConstraintsForSingleItemView(self.basicLabel)
 	}
 	
 	override init(frame: CGRect) {
@@ -74,4 +74,42 @@ class YZBasicLabelTableCell: YZAbstractSingleItemTableViewCell {
 		self.basicLabel.text = ""
 	}
 	
+}
+
+// MARK: Basic "Collection View" Table Cell
+class YZBasicCollectionTableCell : YZAbstractSingleItemTableViewCell {
+    
+    lazy var collectionView:UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .Horizontal
+        layout.itemSize = CGSizeMake(self.contentView.bounds.height, self.contentView.bounds.height)
+        
+        let collectionView = UICollectionView(frame: self.contentView.bounds, collectionViewLayout: layout)
+        
+        return collectionView
+        }()
+    
+    func commonInit(){
+        self.addToSubviewAndSetupConstraintsForSingleItemView(self.collectionView)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.commonInit()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        self.collectionView.yz_blockCollectionViewDelegate = nil
+    }
+    
 }

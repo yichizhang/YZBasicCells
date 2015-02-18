@@ -16,7 +16,7 @@ import Foundation
 import ObjectiveC
 
 protocol YZBlockCollectionViewDelegateProtocol {
-	func setUp(
+	func setUpForCollectionView(
 		collectionView:UICollectionView!,
 		registerClassesBlock: ((collectionView:UICollectionView) -> Void)?,
 		numberOfSectionsBlock: ((collectionView:UICollectionView) -> Int)?,
@@ -44,7 +44,7 @@ class YZBlockCollectionViewDelegate : NSObject, UICollectionViewDelegate, UIColl
 	var minimumInteritemSpacingForSectionAtIndexBlock: ((UICollectionView, UICollectionViewLayout, Int) -> CGFloat)?
 	var minimumLineSpacingForSectionAtIndexBlock: ((UICollectionView, UICollectionViewLayout, Int) -> CGFloat)?
 	
-	func setUp(
+	func setUpForCollectionView(
 		collectionView:UICollectionView!,
 		registerClassesBlock: ((collectionView:UICollectionView) -> Void)?,
 		numberOfSectionsBlock: ((collectionView:UICollectionView) -> Int)?,

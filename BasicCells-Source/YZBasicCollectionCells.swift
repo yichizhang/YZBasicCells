@@ -25,7 +25,7 @@ class YZBasicImageCollectionCell: YZAbstractSingleItemCollectionViewCell {
 	}()
 	
 	func commonInit(){
-		self.inititializeConstraintsForSingleItemView(self.imageView)
+		self.addToSubviewAndSetupConstraintsForSingleItemView(self.imageView)
 	}
 	
 	override init(frame: CGRect) {
@@ -53,7 +53,7 @@ class YZBasicLabelCollectionCell: YZAbstractSingleItemCollectionViewCell {
 	}()
 	
 	func commonInit(){
-		self.inititializeConstraintsForSingleItemView(self.basicLabel)
+		self.addToSubviewAndSetupConstraintsForSingleItemView(self.basicLabel)
 	}
 	
 	override init(frame: CGRect) {
@@ -68,5 +68,38 @@ class YZBasicLabelCollectionCell: YZAbstractSingleItemCollectionViewCell {
 	override func prepareForReuse() {
 		self.basicLabel.text = ""
 	}
+
+}
+
+// MARK: Basic "Horizontal Items" Collection Cell
+class YZBasicHorizontalCollectionCell : YZAbstractSingleItemCollectionViewCell {
+    
+    lazy var collectionView:UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .Horizontal
+        layout.itemSize = CGSizeMake(self.contentView.bounds.height, self.contentView.bounds.height)
+        
+        let collectionView = UICollectionView(frame: self.contentView.bounds, collectionViewLayout: layout)
+        
+        return collectionView
+    }()
+    
+    func commonInit(){
+        self.addToSubviewAndSetupConstraintsForSingleItemView(self.collectionView)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        self.collectionView.yz_blockCollectionViewDelegate = nil
+    }
 
 }

@@ -22,9 +22,10 @@ Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
 
 import UIKit
 
-enum DemoCollectionViewControllerCellId : String {
+enum DemoCells : String {
 	case BasicImageCellNoAutoLayoutId = "BasicImageCellNoAutoLayoutId"
 	case BasicImageCellId = "BasicImageCellId"
+    case BasicHorizontalCollectionCellId = "BasicHorizontalCollectionCellId"
 }
 
 enum DemoCollectionViewControllerSection : Int {
@@ -55,11 +56,11 @@ class DemoCollectionViewController: UIViewController {
 		collectionView.delegate = collectionView.yz_blockCollectionViewDelegate
 		collectionView.dataSource = collectionView.yz_blockCollectionViewDelegate
 		
-		collectionView.yz_blockCollectionViewDelegate.setUp(collectionView, registerClassesBlock: { (collectionView) -> Void in
+		collectionView.yz_blockCollectionViewDelegate.setUpForCollectionView(collectionView, registerClassesBlock: { (collectionView) -> Void in
 			
 			collectionView.registerClass(
 				YZBasicImageCollectionCell.self,
-				forCellWithReuseIdentifier:DemoCollectionViewControllerCellId.BasicImageCellId.rawValue
+				forCellWithReuseIdentifier:DemoCells.BasicImageCellId.rawValue
 			)
 		}, numberOfSectionsBlock: { (collectionView) -> Int in
 			
@@ -76,7 +77,7 @@ class DemoCollectionViewController: UIViewController {
 				
 			default:
 				let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-					DemoCollectionViewControllerCellId.BasicImageCellId.rawValue,
+					DemoCells.BasicImageCellId.rawValue,
 					forIndexPath: indexPath
 					) as YZBasicImageCollectionCell
 				

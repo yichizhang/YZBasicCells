@@ -16,7 +16,7 @@
 
 @implementation YZAbstractSingleItemCollectionViewCell
 
-- (void)inititializeConstraintsForSingleItemView:(UIView*)singleItemView{
+- (void)addToSubviewAndSetupConstraintsForSingleItemView:(UIView*)singleItemView{
 	
 	[self.contentView addSubview:singleItemView];
 	
