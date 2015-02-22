@@ -49,7 +49,7 @@ class YZBasicImageTableCell: YZAbstractSingleItemTableViewCell {
 // MARK: Basic LBAEL Table Cell
 class YZBasicLabelTableCell: YZAbstractSingleItemTableViewCell {
 	
-	var basicLabel:UILabel = UILabel()
+	var basicLabel = UILabel()
 	
 	func commonInit(){
 		self.basicLabel.numberOfLines = 0
@@ -72,6 +72,37 @@ class YZBasicLabelTableCell: YZAbstractSingleItemTableViewCell {
 	
 	override func prepareForReuse() {
 		self.basicLabel.text = ""
+	}
+	
+}
+
+// MARK: Basic TEXT VIEW Table Cell
+class YZBasicTextViewTableCell: YZAbstractSingleItemTableViewCell {
+	
+	var textView = UITextView()
+	
+	func commonInit(){
+		textView.scrollEnabled = false
+		textView.editable = false
+		addToSubviewAndSetupConstraintsForSingleItemView(textView)
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		commonInit()
+	}
+	
+	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		commonInit()
+	}
+	
+	required init(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	override func prepareForReuse() {
+		self.textView.text = ""
 	}
 	
 }
