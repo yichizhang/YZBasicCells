@@ -20,15 +20,23 @@ class CrazyDemoViewController: UIViewController {
 		super.viewDidLoad()
 		
 		button1.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
-		button1.setTitle("Show me row 7", forState: .Normal)
+		button1.setTitle("Show me the last row", forState: .Normal)
 		view.addSubview(button1)
 	}
 	
 	func buttonTapped(button:UIButton) {
 		let vc = PrescrollDemoViewController()
+		vc.rowToPrescrollTo = vc.colorList.count - 1
+		vc.prescrollMode = PrescrollMode.InViewDidLayoutSubviewsWithFlag
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 
+}
+
+enum PrescrollMode : Int {
+	case InViewWillAppear
+	case InViewDidAppearAnimated
+	case InViewDidLayoutSubviewsWithFlag
 }
 
 class PrescrollDemoViewController : UITableViewController {
@@ -62,6 +70,9 @@ class PrescrollDemoViewController : UITableViewController {
 		]
 	}()
 	let BasicLabelCellId = "BasicLabelCellId"
+	var prescrollMode:PrescrollMode?
+	var shouldPrescroll = false
+	var rowToPrescrollTo:Int?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -71,6 +82,43 @@ class PrescrollDemoViewController : UITableViewController {
 		
 	}
 	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		if prescrollMode == .InViewWillAppear {
+			prescrollTableView(animated: false)
+		} else if prescrollMode == .InViewDidLayoutSubviewsWithFlag {
+			shouldPrescroll = true
+		}
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		if prescrollMode == .InViewDidAppearAnimated {
+			prescrollTableView(animated: true)
+		} else if prescrollMode == .InViewDidLayoutSubviewsWithFlag {
+			shouldPrescroll = false
+		}
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		
+		if shouldPrescroll && prescrollMode == .InViewDidLayoutSubviewsWithFlag {
+			prescrollTableView(animated: false)
+		}
+	}
+	
+	// MARK: Pre-scroll
+	func prescrollTableView(#animated:Bool) {
+		if let rowToPrescrollTo = rowToPrescrollTo {
+			let indexPath = NSIndexPath(forRow: rowToPrescrollTo, inSection: 0)
+			self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: animated)
+		}
+	}
+	
+	// MARK: Table view delegate and data source
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		return 1
 	}
