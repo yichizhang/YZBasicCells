@@ -38,10 +38,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let vc3 = CrazyHorizontalCellViewController()
 		vc3.tabBarItem = UITabBarItem(title: "Demo C", image: DemoStyleKit.imageOf(string: "C"), tag: 0)
 		
+		let vc4 = CrazyDemoViewController()
+		vc4.tabBarItem = UITabBarItem(title: "Demo D", image: DemoStyleKit.imageOf(string: "D"), tag: 0)
+		
 		tabVC.viewControllers = [
-			vc1,
-			vc2,
-			vc3
+			UINavigationController(rootViewController: vc1),
+			UINavigationController(rootViewController: vc2),
+			UINavigationController(rootViewController: vc3),
+			UINavigationController(rootViewController: vc4)
 		]
 		
 		window?.rootViewController = tabVC
